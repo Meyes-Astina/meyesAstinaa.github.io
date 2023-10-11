@@ -1,0 +1,338 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('path/to/roboto.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* CSS untuk gaya galeri dan deskripsi */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.gallery-item {
+    flex: 0 0 calc(33.33% - 20px); /* 33.33% untuk 3 kolom, dikurangi margin 10px di setiap sisi */
+    margin: 10px;
+    position: relative;
+}
+
+.welcome-text {
+    position: absolute; /* Menjadikan posisi absolut untuk teks di dalam .image-container */
+    top: 50%; /* Posisikan teks di tengah vertikal */
+    left: 50%; /* Posisikan teks di tengah horizontal */
+    transform: translate(-50%, -50%); /* Pusatkan teks di tengah */
+    color: white; /* Ganti warna teks sesuai kebutuhan */
+    font-size: 36px; /* Sesuaikan ukuran font sesuai kebutuhan */
+    font-weight: bold; /* Sesuaikan tebal font sesuai kebutuhan */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan teks */
+    /* Add any other CSS styles you need for the welcome text */
+}
+
+.artwork {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.gallery-item:hover .image-description {
+    opacity: 1;
+}
+
+/* CSS untuk gaya footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.image-description2 {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Gaya slider */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px; /* Jarak antara slider dan teks */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.artwork {
+    width: 100%;
+    height: auto;
+}
+
+/* Gaya tombol navigasi slider */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+/* Gaya teks di sebelah slider */
+.welcome-text {
+    font-size: 24px;
+    margin-top: 20px; /* Jarak dari slider */
+    text-align: center;
+}
+
+/* Gaya teks "PILIHAN COMMISSION ART" */
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px; /* Jarak dari teks sebelumnya */
+}
+
+/* Gaya tombol "Hubungi Kami" */
+.btn {
+    display: block;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px auto; /* Pusatkan tombol */
+    width: fit-content;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Posisi  Gambar Slide */
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.view-order {
+    width: 200;
+    height: 400px;
+    /* Tambahkan gaya CSS lainnya jika diperlukan */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+.profil-image {
+    width: 100px; /* Lebar yang diinginkan */
+    height: 100px; /* Tinggi yang diinginkan */
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran (opsional) */
+}
+
+/* Gaya dasar untuk Light Mode */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Gaya untuk Dark Mode */
+.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.theme-toggle {
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Tambahan gaya jika Anda ingin mengubah warna tombol saat mode berubah */
+#darkModeButton, #lightModeButton {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Gaya tombol aktif saat mode berubah */
+#darkModeButton.active, #lightModeButton.active {
+    background-color: #555;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
+/* Responsif */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
