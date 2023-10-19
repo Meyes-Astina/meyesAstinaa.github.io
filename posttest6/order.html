@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Pesanan - Commission Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Commission Art</h1>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">Tentang Saya</a></li>
+                <li><a href="contact.html">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="order-form">
+            <h2>Membuat Pesanan Art Untuk Kamu</h2>
+            <p>Lihat gambar di bawah untuk lebih jelasnya!</p>
+            <img src="view.jpg" alt="Silahkan Order Sesuai Kebutuhan Anda!" class="artwork">
+            <form method="post" action="proses_pesanan.php">
+                <div class="input-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+
+                    <label for="age">Usia:</label>
+                    <input type="number" id="age" name="age" placeholder="Masukkan usia Anda" required>
+
+                    <label for="gmail">Gmail:</label>
+                    <input type="email" id="gmail" name="gmail" placeholder="Masukkan Gmail Anda" required>
+
+                    <label for="password">Kata Sandi:</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi Anda"
+                        required>
+
+                    <div class="input-group">
+                        <label for="jenisSeni">Jenis Seni:</label>
+                        <select id="jenisSeni" name="jenisSeni" required>
+                            <option value="Anime Style">Anime Style</option>
+                            <option value="Game Style">Game Style</option>
+                            <option value="Semi Realistic">Semi Realistic</option>
+                        </select>
+
+                        <label for="jenisPesanan">Jenis Pesanan:</label>
+                        <select id="jenisPesanan" name="jenisPesanan" required>
+                            <option value="Bust Up">Bust Up</option>
+                            <option value="Half Body">Half Body</option>
+                            <option value="Full Body">Full Body</option>
+                        </select>
+                    </div>
+
+                    <label for="deskripsi">Deskripsi Pesanan:</label>
+                    <textarea id="deskripsi" name="deskripsi" rows="4" required></textarea>
+
+                    <button type="submit">Kirim Pesanan</button>
+                </div>
+            </form>
+        </section>
+        <section class="order-form">
+            <div class="input-group">
+                <a href="view_orders.php">Lihat Pesanan</a>
+                <a href="edit_orders.php">Edit Pesanan</a>
+                <a href="delete_order.php">Hapus Pesanan</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Commission Art</p>
+    </footer>
+</body>
+
+</html>
