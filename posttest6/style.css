@@ -112,25 +112,35 @@ footer {
 }
 
 .gallery-item {
-    flex: 0 0 calc(33.33% - 20px); /* 33.33% untuk 3 kolom, dikurangi margin 10px di setiap sisi */
+    flex: 0 0 calc(33.33% - 20px);
+    /* 33.33% untuk 3 kolom, dikurangi margin 10px di setiap sisi */
     margin: 10px;
     position: relative;
+    margin-top: 1px;
 }
 
 .welcome-text {
-    position: absolute; /* Menjadikan posisi absolut untuk teks di dalam .image-container */
-    top: 50%; /* Posisikan teks di tengah vertikal */
-    left: 50%; /* Posisikan teks di tengah horizontal */
-    transform: translate(-50%, -50%); /* Pusatkan teks di tengah */
-    color: white; /* Ganti warna teks sesuai kebutuhan */
-    font-size: 36px; /* Sesuaikan ukuran font sesuai kebutuhan */
-    font-weight: bold; /* Sesuaikan tebal font sesuai kebutuhan */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan teks */
+    position: absolute;
+    /* Menjadikan posisi absolut untuk teks di dalam .image-container */
+    top: 50%;
+    /* Posisikan teks di tengah vertikal */
+    left: 50%;
+    /* Posisikan teks di tengah horizontal */
+    transform: translate(-50%, -50%);
+    /* Pusatkan teks di tengah */
+    color: white;
+    /* Ganti warna teks sesuai kebutuhan */
+    font-size: 36px;
+    /* Sesuaikan ukuran font sesuai kebutuhan */
+    font-weight: bold;
+    /* Sesuaikan tebal font sesuai kebutuhan */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Tambahkan bayangan teks */
     /* Add any other CSS styles you need for the welcome text */
 }
 
 .artwork {
-    max-width: 30%; /* Mengubah nilai max-width */
+    max-width: 100%;
     height: auto;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -139,23 +149,34 @@ footer {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
+/* Kustomisasi deskripsi gambar */
 .image-description {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
-    padding: 20px;
-    border-radius: 3px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
+    transition: opacity 0.2s;
 }
 
+/* Tambahkan efek hover pada galeri item */
 .gallery-item:hover .image-description {
     opacity: 1;
+}
+
+/* Kustomisasi h2 pada deskripsi */
+.image-description2 h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Kustomisasi teks pada deskripsi */
+.image-description p {
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 /* CSS untuk gaya footer */
@@ -176,7 +197,8 @@ footer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    margin-bottom: 20px; /* Jarak antara slider dan teks */
+    margin-bottom: 20px;
+    /* Jarak antara slider dan teks */
 }
 
 .slider {
@@ -217,7 +239,8 @@ footer {
 /* Gaya teks di sebelah slider */
 .welcome-text {
     font-size: 24px;
-    margin-top: 20px; /* Jarak dari slider */
+    margin-top: 20px;
+    /* Jarak dari slider */
     text-align: center;
 }
 
@@ -225,7 +248,8 @@ footer {
 h1 {
     font-size: 24px;
     text-align: center;
-    margin-top: 20px; /* Jarak dari teks sebelumnya */
+    margin-top: 20px;
+    /* Jarak dari teks sebelumnya */
 }
 
 /* Gaya tombol "Hubungi Kami" */
@@ -236,7 +260,8 @@ h1 {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    margin: 20px auto; /* Pusatkan tombol */
+    margin: 20px auto;
+    /* Pusatkan tombol */
     width: fit-content;
 }
 
@@ -250,6 +275,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
 .slide img {
     max-width: 100%;
     max-height: 100%;
@@ -272,9 +298,12 @@ h1 {
 }
 
 .profil-image {
-    width: 100px; /* Lebar yang diinginkan */
-    height: 100px; /* Tinggi yang diinginkan */
-    border-radius: 50%; /* Membuat gambar menjadi lingkaran (opsional) */
+    width: 100px;
+    /* Lebar yang diinginkan */
+    height: 100px;
+    /* Tinggi yang diinginkan */
+    border-radius: 50%;
+    /* Membuat gambar menjadi lingkaran (opsional) */
 }
 
 /* Gaya dasar untuk Light Mode */
@@ -295,7 +324,8 @@ body {
 }
 
 /* Tambahan gaya jika Anda ingin mengubah warna tombol saat mode berubah */
-#darkModeButton, #lightModeButton {
+#darkModeButton,
+#lightModeButton {
     background-color: #333;
     color: #fff;
     border: none;
@@ -304,7 +334,8 @@ body {
 }
 
 /* Gaya tombol aktif saat mode berubah */
-#darkModeButton.active, #lightModeButton.active {
+#darkModeButton.active,
+#lightModeButton.active {
     background-color: #555;
 }
 
@@ -326,14 +357,32 @@ body {
     nav {
         flex-direction: column;
         text-align: center;
+        align-items: center;
+        /* Pusatkan menu di tengah saat tampilan kecil */
     }
 
     nav ul {
         margin-top: 20px;
+        padding: 0;
+        /* Hilangkan padding bawaan */
     }
 
     nav ul li {
         display: block;
         margin: 10px 0;
+    }
+
+    .logo {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .theme-toggle {
+        text-align: center;
+    }
+
+    .theme-toggle button {
+        margin: 5px;
+        /* Berikan jarak antara tombol tema */
     }
 }

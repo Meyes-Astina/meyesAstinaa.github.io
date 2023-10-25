@@ -1,0 +1,176 @@
+
+/* CSS untuk mengatur tata letak tombol Kirim Pesanan dan Lihat Data Pesanan dengan jarak lebih dekat */
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.submit-button, .process-button {
+    margin-right: 10px; /* Atur margin kanan untuk mengatur jarak antara tombol */
+}
+
+/* Gaya tombol Kirim Pesanan */
+.submit-button {
+    background-color: #007BFF; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    border: none;
+    padding: 10px 20px; /* Padding untuk mengatur ukuran tombol */
+    cursor: pointer;
+    border-radius: 5px; /* Membuat sudut tombol lebih lembut */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat tombol dihover */
+}
+
+/* Gaya tombol Lihat Data Pesanan */
+.process-button {
+    background-color: #28a745; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    border: none;
+    padding: 10px 20px; /* Padding untuk mengatur ukuran tombol */
+    cursor: pointer;
+    border-radius: 5px; /* Membuat sudut tombol lebih lembut */
+}
+
+.process-button:hover {
+    background-color: #1e7e34; /* Warna latar belakang saat tombol dihover */
+}
+
+/* CSS untuk menggaya tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Gaya header tabel */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Gaya baris genap */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Gaya tautan "Edit" dan "Hapus" */
+a.edit-link, a.delete-link {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+}
+
+a.delete-link {
+    background-color: #f44336;
+}
+
+/* Gaya tombol Edit */
+.edit-button {
+    background-color: #4CAF50; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 5px 10px; /* Padding tombol */
+    border: none; /* Hapus garis batas */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px; /* Sudut tombol yang melengkung */
+    cursor: pointer;
+}
+
+/* Gaya tombol Hapus */
+.delete-button {
+    background-color: #f44336; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 5px 10px; /* Padding tombol */
+    border: none; /* Hapus garis batas */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px; /* Sudut tombol yang melengkung */
+    cursor: pointer;
+}
+/* Tambahkan CSS untuk tombol "Edit" dan "Hapus" */
+.action-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.action-button.delete-button {
+    background-color: #FF0000;
+}
+
+/*responsif */
+@media screen and (max-width: 768px) {
+    .order-list table {
+        width: 100%;
+    }
+
+    .order-list th,
+    .order-list td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .order-list tr {
+        margin-bottom: 10px;
+    }
+
+    .order-list td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+    }
+
+    .order-list td:nth-child(1)::before {
+        content: "ID";
+    }
+
+    .order-list td:nth-child(2)::before {
+        content: "Nama";
+    }
+
+    .order-list td:nth-child(3)::before {
+        content: "Usia";
+    }
+
+    .order-list td:nth-child(4)::before {
+        content: "Gmail";
+    }
+
+    .order-list td:nth-child(5)::before {
+        content: "Jenis Seni";
+    }
+
+    .order-list td:nth-child(6)::before {
+        content: "Jenis Pesanan";
+    }
+
+    .order-list td:nth-child(7)::before {
+        content: "Deskripsi";
+    }
+
+    .order-list td:nth-child(8)::before {
+        content: "Aksi";
+    }
+}
