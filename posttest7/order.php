@@ -1,0 +1,146 @@
+<?php
+session_start();
+
+// Periksa apakah pengguna telah login
+if (!isset($_SESSION["user_username"])) {
+    // Jika pengguna tidak login, arahkan ke halaman login atau halaman lain
+    header("Location: login_user.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Pesanan - Commission Art</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style-order.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Commission Art</h1>
+            </div>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">Tentang Saya</a></li>
+                <li><a href="contact.php">Hubungi Kami</a></li>
+                <li><a href="detail.php">Data Pesanan</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="order-form">
+            <h2>Membuat Pesanan Art Untuk Kamu</h2>
+            <p>Silakan Lihat Penjelasan Gambar Di Bawah Ini :</p>
+            <div id="view-order">
+                <img src="image/view.jpg" alt="Contoh Karya Seni" class="artwork">
+            </div>
+            <p>Silakan isi formulir di bawah ini untuk membuat pesanan art kreatif :</p><br>
+            <form>
+
+                <div class="input-group">
+
+                    <label for="id">ID:</label>
+                    <input type="number" id="id" name="id" placeholder="Masukkan ID Anda" required>
+
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+                    <label for="age">Usia:</label>
+                    <input type="number" id="age" name="age" placeholder="Masukkan usia Anda" required>
+
+                    <label for="gmail">Gmail:</label>
+                    <input type="email" id="gmail" name="gmail" placeholder="Masukkan Gmail Anda" required>
+
+                    <label for="password">Kata Sandi:</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi Anda"
+                        required>
+
+                    <div class="input-group">
+                        <label for="jenisseni">Jenis Seni:</label>
+                        <select id="jenisseni" name="jenisseni" required>
+                            <option value="Anime Style">Anime Style</option>
+                            <option value="Game Style">Game Style</option>
+                            <option value="Semi Realistic">Semi Realistic</option>
+                        </select>
+                        <label for="jenispesanan">Jenis Pesanan:</label>
+                        <select id="jenispesanan" name="jenispesanan" required>
+                            <option value="Bust Up">Bust Up</option>
+                            <option value="Half Body">Half Body</option>
+                            <option value="Full Body">Full Body</option>
+                        </select>
+                    </div>
+
+                    <label for="deskripsi">Deskripsi Pesanan:</label>
+                    <textarea id="deskripsi" name="deskripsi" rows="4" required></textarea>
+                </div>
+            </form>
+            <div class="button-container">
+                <form action="koneksi.php" method="post" id="orderForm">
+                    <button type="submit" class="submit-button">Kirim Pesanan</button>
+                </form>
+                <button class="process-button" onclick="window.location.href='detail.php'">Lihat Detail
+                    Pesanan</button>
+            </div>
+            <div id="inputResult"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Commission Art</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#orderForm').submit(function (e) {
+                e.preventDefault(); // Menghentikan pengiriman form default
+
+                const id = $('#id').val();
+                const nama = $('#nama').val();
+                const age = $('#age').val();
+                const gmail = $('#gmail').val();
+                const katasandi = $('#password').val();
+                const jenisseni = $('#jenisseni').val();
+                const jenispesanan = $('#jenispesanan').val();
+                const deskripsi = $('#deskripsi').val();
+
+                // Validasi Gmail (gunakan pola email yang sederhana)
+                const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                if (!emailPattern.test(gmail)) {
+                    alert('Alamat Gmail tidak valid.');
+                    return;
+                }
+
+                // Menampilkan hasil inputan di bawah formulir
+                const inputResult = `
+                ID : ${id}<br>
+                Nama: ${nama}<br>
+                Usia: ${age}<br>  
+                Gmail: ${gmail}<br>
+                Password : ${katasandi}<br>
+                Jenis Seni: ${jenisseni}<br>
+                Jenis Pesanan: ${jenispesanan}<br>
+                Deskripsi Pesanan:<br>${deskripsi}
+                `;
+
+                // Simpan atau tampilkan hasil inputan sesuai kebutuhan Anda
+                $('#inputResult').html(inputResult);
+
+                // Kirim data ke koneksi.php menggunakan AJAX
+                $.post('koneksi.php', { id, jenisseni, jenispesanan, deskripsi, nama, age, gmail, katasandi }, function (response) {
+                    alert(response); // Tampilkan pesan yang dikembalikan oleh koneksi.php
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
